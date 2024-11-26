@@ -36,7 +36,9 @@ To compile the code, click on the "Solidity Compiler" tab in the left-hand sideb
 
 Once the code is compiled, you can deploy the contract by clicking on the "Deploy & Run Transactions" tab in the left-hand sidebar. Select the "PinguToken" contract from the dropdown menu, and then click on the "Deploy" button.
 
-Once the contract is deployed, you can interact with it by copying the Account Address in the Deploy & Run Transactions" tab then go to Deployed contracts click the drop down arrow for the mint and paste the copied address the add your value then click transact to add value for your token. To see the token value the click the totalSupply below. then to see the symbol, decimal, and name of the token just click the following buttons.
+Once the contract is deployed, you can interact with it by copying the Account Address in the Deploy & Run Transactions" tab then go to Deployed contracts click the drop down arrow for the mint and paste the copied address the add your value then click transact to add value for your token. To see the token value the click the totalSupply below. then to see the symbol, decimal, and name of the token just click the following buttons. To add allowance you need click the drop down arrow of allowanceincrease then copy and paste the Account Address to the spender box then add your value below before clicking the transact. you can do the same steps to the decrease allowance. to check your allowance just copy and paste the address for both columns then click call it will show. to check your account balance you need to click the drop down arrow in balanceof to paste the address and click call it will automatically show. to transfer you just need to click the drop down arrow in transfer, you just need to copy the account address you want to transfer then add the amount then click transact. 
+
+
 ## Authors
 @Dracogray24
 
