@@ -351,11 +351,11 @@
 	},
 	"sources": {
 		"contracts/PinguToken.sol": {
-			"keccak256": "0xf8b2d5327e5824f3c76a414ad3f01b4d7c0e2a89e582e6001db1090e363a4c6e",
+			"keccak256": "0x1af5da06381b8368df9b657b8718aef4369f427c79c1e9697cd79743a87a62ab",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://89c2b515b5b528364cb37f34c56cb2e23bcdf5089e2733dcc7e81f819d7af582",
-				"dweb:/ipfs/QmWMjKB4ytKJyCwNjzpjXmstzkR48cViu1sddNdVq5LnMU"
+				"bzz-raw://99dd27ea17286513533307725f0d8b023e8d1c7e9f912b49a8d6d78bfcfcbd25",
+				"dweb:/ipfs/QmQHhTGY4X54G4xng1w4fkS4zK4EAVPEgcGHTe1P4h1EBQ"
 			]
 		},
 		"https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.0.0/contracts/token/ERC20/ERC20.sol": {
