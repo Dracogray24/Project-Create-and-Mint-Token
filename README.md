@@ -16,27 +16,35 @@ Once you are on the Remix website, click the ERC20 in the homepage to create all
 
 ```javascript
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.20;
+// Compatible with OpenZeppelin Contracts ^5.0.0
+pragma solidity ^0.8.22;
 
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.0.0/contracts/token/ERC20/ERC20.sol";
+import {ERC20} from "@openzeppelin/contracts@5.1.0/token/ERC20/ERC20.sol";
+import {ERC20Burnable} from "@openzeppelin/contracts@5.1.0/token/ERC20/extensions/ERC20Burnable.sol";
+import {ERC20Permit} from "@openzeppelin/contracts@5.1.0/token/ERC20/extensions/ERC20Permit.sol";
+import {Ownable} from "@openzeppelin/contracts@5.1.0/access/Ownable.sol";
 
-
-contract PinguToken is ERC20{
-
-    constructor() ERC20("PinguToken", "NOOT"){
-        _mint(0x5B38Da6a701c568545dCfcB03FcB875f56beddC4, 1000000);
-        _burn(0x5B38Da6a701c568545dCfcB03FcB875f56beddC4, 500000);
-        _transfer(0x5B38Da6a701c568545dCfcB03FcB875f56beddC4, 0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2, 1000);
+contract PinguToken is ERC20, ERC20Burnable, Ownable, ERC20Permit {
+    constructor(address initialOwner)
+        ERC20("PinguToken", "NOOT")
+        Ownable(initialOwner)
+        ERC20Permit("PinguToken")
+    {
+        _mint(msg.sender, 1000 * 10 ** decimals());
     }
 
+    function mint(address to, uint256 amount) public onlyOwner {
+        _mint(to, amount);
+    }
 }
+
 
 ```
 To compile the code, click on the "Solidity Compiler" tab in the left-hand sidebar. Make sure the "Compiler" option is set to "0.8.4" (or another compatible version), and then click on the "Compile PinguToken.sol" button.
 
-Once the code is compiled, you can deploy the contract by clicking on the "Deploy & Run Transactions" tab in the left-hand sidebar. Select the "PinguToken" contract from the dropdown menu, and then click on the "Deploy" button.
+Once the code is compiled, you can deploy the contract by clicking the "Deploy & Run Transactions" tab in the left-hand sidebar. Select the "PinguToken" contract from the dropdown menu, and copy the Account Address and paste it in the text area beside the deploy button, then click on the "Deploy" button.
 
-Once the contract is deployed, you can interact with it by copying the Account Address in the Deploy & Run Transactions" tab then go to Deployed contracts click the drop down arrow for the mint and paste the copied address the add your value then click transact to add value for your token. To see the token value the click the totalSupply below. then to see the symbol, decimal, and name of the token just click the following buttons. To add allowance you need click the drop down arrow of allowanceincrease then copy and paste the Account Address to the spender box then add your value below before clicking the transact. you can do the same steps to the decrease allowance. to check your allowance just copy and paste the address for both columns then click call it will show. to check your account balance you need to click the drop down arrow in balanceof to paste the address and click call it will automatically show. to transfer you just need to click the drop down arrow in transfer, you just need to copy the account address you want to transfer then add the amount then click transact. 
+Once the contract is deployed, you can interact with it by copying the Account Address in the Deploy & Run Transactions" tab then go to Deployed contracts click the drop down arrow for the mint and paste the copied address the add your value then click transact to add value for your token. To see the token value the click the totalSupply below. then to see the symbol, decimal, and name of the token just click the following buttons. To add allowance you need click the drop down arrow of allowanceincrease then copy and paste the Account Address to the spender box then add your value below before clicking the transact. you can do the same steps to the decrease allowance. to check your allowance just copy and paste the address for both columns then click call it will show. to check your account balance you need to click the drop down arrow in balanceof to paste the address and click call it will automatically show. to transfer you just need to click the drop down arrow in transfer, you just need to copy the account address you want to transfer then add the amount then click transact. To burn click the drop down arrow then input the value you want to burn and click the button. To mint tokens you just need to click the drop down arrow of the mint button then paste the address and add the value you want to mint before clicking the button
 
 
 ## Authors
